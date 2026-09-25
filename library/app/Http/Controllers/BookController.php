@@ -29,7 +29,9 @@ class BookController extends Controller
      */
     public function store(StoreBookRequest $request)
     {
-        //
+        $record = new Book();
+        $record->create($request->all());
+        return $record;
     }
 
     /**
@@ -63,6 +65,7 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
-        //
+        $record = Book::destroy($book->id);
+        return $record;
     }
 }

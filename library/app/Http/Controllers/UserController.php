@@ -70,6 +70,7 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         //return $record = User::findorFail($user->id)->delete();
-        return $record = User::destroy($user->id);
+        $record = User::destroy($user->id);
+        return $record;
     }
 }

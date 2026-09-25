@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-#[Fillable(['title', 'author'])]//kötelező a kitöltése?
-class Book extends Model
+#[Fillable(['user_id', 'copy_id', 'start'])]
+class Lending extends Model
 {
-    /** @use HasFactory<\Database\Factories\BookFactory> */
+    /** @use HasFactory<\Database\Factories\LendingFactory> */
     use HasFactory;
 }

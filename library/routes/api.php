@@ -12,14 +12,12 @@ Route::get('/user', function (Request $request) {
 
 /* Összes adattag */
 Route::get('/users', [UserController::class, 'index']); /* http://127.0.0.1:8000/api/users */
-Route::get('/books', [BookController::class, 'index']);
 Route::get('/copies', [CopyController::class, 'index']);
 
 /* Egy adott tag - a link végén szám */
 Route::get('/users/{user}', [UserController::class, 'show']); /* http://127.0.0.1:8000/api/users/5 */
 /* http://127.0.0.1:8000/api/users/534 hibás lesz mert nincs */
 Route::get('/copies/{copy}', [CopyController::class, 'show']);/* http://127.0.0.1:8000/api/copies/5 */
-Route::get('/books/{book}', [BookController::class, 'show']);/* http://127.0.0.1:8000/api/books/3 */
 
 Route::put('/users/{user}', [UserController::class, 'update']);
 /* nincs paramétere -> Miért? */
@@ -27,3 +25,13 @@ Route::put('/users/{user}', [UserController::class, 'update']);
 Route::post('/users', [UserController::class, 'store']);
 
 Route::delete('/users/{user}', [UserController::class, 'destroy']);
+
+/* Book */
+Route::get('/books', [BookController::class, 'index']);
+Route::get('/books/{book}', [BookController::class, 'show']);/* http://127.0.0.1:8000/api/books/3 */
+
+Route::put('/books/{book}', [BookController::class, 'update']);
+
+Route::post('/books', [BookController::class, 'store']);
+
+Route::delete('/books/{book}', [BookController::class, 'destroy']);
