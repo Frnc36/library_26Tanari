@@ -13,7 +13,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
+        return Book::all();
     }
 
     /**
@@ -37,7 +37,7 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
-        //
+        return $book;
     }
 
     /**
@@ -53,7 +53,9 @@ class BookController extends Controller
      */
     public function update(UpdateBookRequest $request, Book $book)
     {
-        //
+        $record = Book::findorFail($book->id);
+        $record->update($request->all());
+        return $record;
     }
 
     /**

@@ -13,7 +13,7 @@ class CopyController extends Controller
      */
     public function index()
     {
-        //
+        return Copy::all();
     }
 
     /**
@@ -37,7 +37,7 @@ class CopyController extends Controller
      */
     public function show(Copy $copy)
     {
-        //
+        return $copy;
     }
 
     /**
